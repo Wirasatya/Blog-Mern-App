@@ -1,0 +1,60 @@
+.post {
+  width: 385px;
+  margin: 0px 25px 40px 25px;
+  display: flex;
+  flex-direction: column;
+  .img {
+    width: 385px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .cats {
+      .cat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .link {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    .title {
+      font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      margin-top: 15px;
+      cursor: pointer;
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .date {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 400;
+      color: #999999;
+      margin-top: 15px;
+    }
+  }
+  .desc {
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #444444;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+}

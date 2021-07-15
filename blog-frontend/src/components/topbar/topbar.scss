@@ -1,0 +1,103 @@
+.topbar {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  font-family: "Josefin Sans", sans-serif;
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      font-size: 20px;
+      margin-right: 10px;
+      color: #444;
+      cursor: pointer;
+    }
+  }
+  .center {
+    flex: 6;
+    .list {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      .listItem {
+        margin-right: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        cursor: pointer;
+        .link {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .link {
+      text-decoration: none;
+      .img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
+    .list {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      .listItem {
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        cursor: pointer;
+        .link {
+          text-decoration: none;
+        }
+      }
+    }
+    .searchWrap {
+      flex: 0.75;
+      background-color: gray;
+      display: flex;
+      border-radius: 15px;
+      align-items: center;
+      justify-content: space-evenly;
+      input {
+        width: 90%;
+        border: none;
+        margin: 3px 15px 3px 5px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        display: none;
+      }
+      .searchIcon {
+        font-size: 18px;
+        color: rgb(31, 29, 29);
+        cursor: pointer;
+        padding-right: 10px;
+      }
+    }
+  }
+}
