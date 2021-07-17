@@ -38,10 +38,11 @@
       font-family: "Varela Round", Arial, Helvetica, sans-serif;
       span {
         color: gray;
-        .author {
-          margin-left: 5px;
-          .link {
-            text-decoration: none;
+        .link {
+          text-decoration: none;
+          color: inherit;
+          .author {
+            margin-left: 5px;
           }
         }
       }
@@ -55,6 +56,26 @@
         font-size: 30px;
         font-weight: 600;
       }
+    }
+    .input {
+      border: none;
+      color: #666;
+      font-size: 18px;
+      line-height: 25px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .button {
+      width: 100px;
+      border: none;
+      background-color: teal;
+      padding: 5px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: 20px;
     }
   }
 }

@@ -2,37 +2,26 @@ import React from "react";
 import "./post.scss";
 import { Link } from "react-router-dom";
 
-const Post = ({ img }) => {
+const Post = ({ post }) => {
+  const PF = "http://localhost:8000/images/";
   return (
     <div className="post">
-      <img className="img" src={img} alt="" />
+      {post.photo && <img className="img" src={PF + post.photo} alt="" />}
       <div className="info">
         <div className="cats">
-          <span className="cat">
-            <Link className="link" to="/posts?cat=Music">
-              Music
-            </Link>
-          </span>
-          <span className="cat">
-            <Link className="link" to="/posts?cat=Music">
-              Life
-            </Link>
-          </span>
+          {post.categories.map((c) => (
+            <span className="cat">{c.name}</span>
+          ))}
         </div>
         <span className="title">
-          <Link to="//abc" className="link">
-            Lorem ipsum dolor sit amet
+          <Link to={`/post/${post._id}`} className="link">
+            {post.title}
           </Link>
         </span>
         <hr />
-        <span className="date">1 hour ago</span>
+        <span className="date">{new Date(post.createdAt).toDateString()}</span>
       </div>
-      <p className="desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
-        fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
-        atque, exercitationem quibusdam, reiciendis odio laboriosam?
-      </p>
+      <p className="desc">{post.desc}</p>
     </div>
   );
 };

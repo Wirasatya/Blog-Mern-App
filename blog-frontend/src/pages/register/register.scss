@@ -50,5 +50,9 @@
     border: none;
     color: white;
     border-radius: 10px;
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }

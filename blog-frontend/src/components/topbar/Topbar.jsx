@@ -8,9 +8,20 @@ import {
   Instagram,
   Search,
 } from "@material-ui/icons";
+import { useStateGlobal } from "../../context/StateProvider";
 
 const Topbar = () => {
-  const user = true;
+  const [{ user }, dispatch] = useStateGlobal();
+  const PF = "http://localhost:8000/images/";
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "SET_USER",
+      user: null,
+    });
+    sessionStorage.clear();
+  };
   return (
     <div className="topbar">
       <div className="left">
@@ -33,7 +44,11 @@ const Topbar = () => {
               WRITE
             </Link>
           </li>
-          {user && <li className="listItem">LOGOUT</li>}
+          {user && (
+            <li className="listItem" onClick={handleLogout}>
+              LOGOUT
+            </li>
+          )}
         </ul>
       </div>
       <div className="right">
@@ -44,11 +59,7 @@ const Topbar = () => {
         </form>
         {user ? (
           <Link className="link" to="/settings">
-            <img
-              className="img"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
+            <img className="img" src={PF + user.profilePic} alt="" />
           </Link>
         ) : (
           <ul className="list">
